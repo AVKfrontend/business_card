@@ -528,10 +528,12 @@ body {
 .leng--active {
 	display: block;
 }
-.menu__close-btn {
+.menu__item-close-btn {
 	display: none;
 }
-
+.menu__burger-btn {
+	display: none;
+}
 @media screen and (min-width: 1399px) {
 	.container {
 		width: 1300px;
@@ -589,6 +591,7 @@ body {
 		display: none;
 	}
 	.menu__burger-btn {
+		display: block;
 		width: 30px;
 		height: 30px;
 		cursor: pointer;
@@ -640,6 +643,9 @@ body {
 		margin: 30px auto;
 		width: 130px;
 		text-align: center;
+	}
+	.menu__item-close-btn {
+		display: block;
 	}
 	.menu__list.active .menu__close-btn {
 		position: absolute;
