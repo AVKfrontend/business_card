@@ -12,7 +12,6 @@ body {
 	width: 1110px;
 	margin: 0 auto;
 	min-height: 100px;
-	/*border: 1px solid black;*/
 }
 .ma {
 	margin: auto;
@@ -309,14 +308,16 @@ body {
 	grid-gap: 20px;
 	margin: 40px 0;
 }
-.sampls__item {
+.sampls__item,
+.certificates-wrupper {
 	position: relative;
 	width: 100%;
 	padding-bottom: 100%;
 	border: 1px solid green;
 	overflow: hidden;
 }
-.sampls__pic img {
+.sampls__pic img,
+.certificates-item {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -384,7 +385,8 @@ body {
 	margin-left: 15px;
 }
 .in_touch,
-.list {
+.list,
+.certificates {
 	padding: 60px 0 40px;
 }
 .cont  {
@@ -471,7 +473,7 @@ body {
 }
 .contacts {
 	display: grid;
-	grid-template: 1fr / minmax(230px, 245px) minmax(155px, 1980px) minmax(230px, 245px);
+	grid-template: 1fr / minmax(230px, 273px) minmax(155px, 1980px) minmax(230px, 245px);
 }
 .contacts-wrapper {
 	color: #bcbcbc;
@@ -673,14 +675,15 @@ body {
 		line-height: 1.2em;
 	}
 	.contacts {
-		grid-template: 140px 150px 100px / 1fr ;
+		grid-template: 140px 150px 1fr / 1fr ;
 	}
 	.contacts-wrapper,
 	.contacts-wrapper:last-child {
 		justify-self: center;
 		text-align: center;
 	}
-	.contacts-wrapper a {
+	.contacts-wrapper a,
+	.name {
 		margin: 0 auto;
 	}
 	.footer {
