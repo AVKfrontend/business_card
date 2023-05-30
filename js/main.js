@@ -1,5 +1,4 @@
 
-
 (function($, undefined){
   $(function(){
 /// ------ Start jQuery ------- ///
@@ -45,55 +44,7 @@
 		pauseOnFocus: true,
 		pauseOnDotsHover: true,
 	})
-	/// ---- Display skills image ----- ///
-	$(".skills").mouseover(() => {
-		$(".skills-block__usual").addClass("skills-box--no-opacity");
-	});
-	$(".skills").mouseout(() => {
-		$(".skills-block__usual").removeClass("skills-box--no-opacity");
-	});
-	$(".skills-box[data-info='html']").mouseover(() => {
-		$(".skills-block__html").addClass("skills-box--opacity");
-	});
-	$(".skills-box[data-info='html']").mouseout(() => {
-		$(".skills-block__html").removeClass("skills-box--opacity");
-	});
-	$(".skills-box[data-info='css']").mouseover(() => {
-		$(".skills-block__css").addClass("skills-box--opacity");
-	});
-	$(".skills-box[data-info='css']").mouseout(() => {
-		$(".skills-block__css").removeClass("skills-box--opacity");
-	});
-	$(".skills-box[data-info='flex']").mouseover(() => {
-		$(".skills-block__flex").addClass("skills-box--opacity");
-	});
-	$(".skills-box[data-info='flex']").mouseout(() => {
-		$(".skills-block__flex").removeClass("skills-box--opacity");
-	});
-	$(".skills-box[data-info='grid']").mouseover(() => {
-		$(".skills-block__grid").addClass("skills-box--opacity");
-	});
-	$(".skills-box[data-info='grid']").mouseout(() => {
-		$(".skills-block__grid").removeClass("skills-box--opacity");
-	});
-	$(".skills-box[data-info='js']").mouseover(() => {
-		$(".skills-block__js").addClass("skills-box--opacity");
-	});
-	$(".skills-box[data-info='js']").mouseout(() => {
-		$(".skills-block__js").removeClass("skills-box--opacity");
-	});
-	$(".skills-box[data-info='php']").mouseover(() => {
-		$(".skills-block__php").addClass("skills-box--opacity");
-	});
-	$(".skills-box[data-info='php']").mouseout(() => {
-		$(".skills-block__php").removeClass("skills-box--opacity");
-	});
-	$(".skills-box[data-info='wp']").mouseover(() => {
-		$(".skills-block__wp").addClass("skills-box--opacity");
-	});
-	$(".skills-box[data-info='wp']").mouseout(() => {
-		$(".skills-block__wp").removeClass("skills-box--opacity");
-	});
+
 	///----------- Modal window ---------///
 	$('.site-order__btn').click(function() {
 		$('body').addClass('over-hidn')
@@ -128,3 +79,38 @@
 /// ------ End jQuery ------- ///
   });
 })(jQuery);
+
+/// ---- Display skills image ----- ///
+const images = { 
+	html: "html5.png", 
+	css: "css3_500.png",
+	flex: "flexbox_300.png",
+	grid: "grid.png",
+	js: "java-script.png",
+	vue: "vue.png",
+	php: "php-icon.png",
+	wp: "wordpress-logo-29042.png"
+};
+const elementsOfSkills = document.querySelectorAll(".skills-box");
+const elementForImage = document.querySelector(".skills-block__img")
+const animateDuration = 90;
+elementsOfSkills.forEach((el) => {
+	const infoTeg = el.dataset.info;
+	const imageFile = images[infoTeg];
+	el.addEventListener("mouseenter", async (event) => {
+		await new Promise((resolve, reject) => {
+				elementForImage.animate([{opacity: 1}, {opacity: 0}], animateDuration);
+				setTimeout(() => resolve(), animateDuration);
+			});
+		elementForImage.setAttribute("src", `./img/${imageFile}`);
+		elementForImage.animate([{opacity: 0}, {opacity: 1}], animateDuration);
+	})
+});
+document.querySelector(".skills-list").addEventListener("mouseleave", async () => {
+		await new Promise((resolve, reject) => {
+				elementForImage.animate([{opacity: 1}, {opacity: 0}], animateDuration);
+				setTimeout(() => resolve(), animateDuration);
+			});
+		elementForImage.setAttribute("src", "./img/avk_photo_square_700.jpg");
+		elementForImage.animate([{opacity: 0}, {opacity: 1}], animateDuration);
+	});
