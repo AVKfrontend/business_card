@@ -253,14 +253,17 @@ body {
 .java-gradient {
 	background: linear-gradient(90deg, rgb(16, 201, 195) 70%, rgb(160, 160, 160) 70%);
 }
-.vue-gradient {
-	background: linear-gradient(90deg, rgb(16, 201, 195) 65%, rgb(160, 160, 160) 70%);
+.vue-o-gradient {
+	background: linear-gradient(90deg, rgb(16, 201, 195) 65%, rgb(160, 160, 160) 65%);
+}
+.vue-c-gradient {
+	background: linear-gradient(90deg, rgb(16, 201, 195) 15%, rgb(160, 160, 160) 15%);
 }
 .php-gradient {
-	background: linear-gradient(90deg, rgb(16, 201, 195) 40%, rgb(160, 160, 160) 50%);
+	background: linear-gradient(90deg, rgb(16, 201, 195) 40%, rgb(160, 160, 160) 40%);
 }
 .wp-gradient {
-	background: linear-gradient(90deg, rgb(16, 201, 195) 0%, rgb(16, 201, 195) 60%, rgb(160, 160, 160) 30%, rgb(160, 160, 160) 100%);
+	background: linear-gradient(90deg, rgb(16, 201, 195) 0%, rgb(16, 201, 195) 30%, rgb(160, 160, 160) 30%, rgb(160, 160, 160) 100%);
 }
 .skills-box:hover .skills-box__line {
 	height: 5px;
