@@ -75,7 +75,6 @@ const messages = {
 
 	///----------- Modal window ---------///
 	$('.site-order__btn').click(function() {
-		console.log(lang);
 		$('.modal div').html(messages.order[lang]);
 		$('body').addClass('over-hidn');
 		$('.modal').addClass('active');
@@ -150,19 +149,39 @@ const lang = document.documentElement.lang;
 const modal = document.querySelector('.modal');
 const body = document.body;
 const buttons = Array.from(document.querySelectorAll('.sampls__btn'));
-	console.log(body);
 buttons.forEach(nod => nod.onclick = function (event) {
 	const messageIdentifier = event.target.dataset.info;
-	// console.log(messages[messageIdentifier]);
 	const messageItem = messages[messageIdentifier][lang];
-	console.log(modal.lastElementChild);
 	modal.lastElementChild.innerHTML = messageItem;
 	modal.classList.add('active');
 	body.classList.add('over-hidn');
-	// document.querySelector('.close').addEventListener('click', closeModal);
 });
 function closeModal (ev) {
 	modal.classList.remove('active');
 	body.classList.remove('over-hidn');
 	document.querySelector('.close').removeEventListener('click', closeModal);
 };
+
+/// ---- Light/Dark theme switch ----- ///
+const savedTheme = localStorage.getItem('savedTheme');
+const globalMatchMedia = window.matchMedia;
+const themeChangeButton = document.querySelector('.head-row__light');
+if(!savedTheme && globalMatchMedia) {
+	if(globalMatchMedia('(prefers-color-scheme: dark)').matches) changeTheme();
+	globalMatchMedia('(prefers-color-scheme: dark)').addEventListener('change', changeTheme);
+}
+if(savedTheme == 'dark') {
+	changeTheme();
+}
+function changeTheme()  {
+	body.classList.toggle('dark');
+}
+themeChangeButton.addEventListener('click', changingTheme);
+function changingTheme() {
+	saveTheme();
+	changeTheme();
+}
+function saveTheme() {
+	const theme = body.className.includes('dark') ? 'light' : 'dark';
+	localStorage.setItem('savedTheme', theme);
+}

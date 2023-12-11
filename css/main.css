@@ -5,7 +5,7 @@ body {
 	font-family: 'Montserrat';
 	font-size: 20px;
 	font-weight: 500;
-	background: #00000020;
+	/*background: #00000020;*/
 	background-color: #e0e0e0;
 }
 .container {
@@ -722,3 +722,44 @@ body {
 		margin-top: 20px;
 	}
 } 
+/*------Light/Dark theme------*/
+/*@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #444;
+	}
+}*/
+body.dark {
+	background-color: #444;
+}
+.head-row__light {
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	margin:0 auto 15px;
+	position: relative;
+}
+.head-row__light-on, 
+.head-row__light-off {
+	display: inline-block;
+	width: 1.3rem;
+	height: 1rem;
+}
+.head-row__light-on {
+	background-color: #fff;
+	border-radius: 50px 0 0 50px;
+}
+.head-row__light-off {
+	background-color: #000;
+	border-radius: 0 50px 50px 0;
+}
+.head-row__light-switch {
+	position: absolute;
+	top: 0;
+	left: 26%;
+	width: 25%;
+	height: 100%;
+	background-color: #39b4af;
+}
+.dark .head-row__light-switch {
+	left: 49%;
+}
