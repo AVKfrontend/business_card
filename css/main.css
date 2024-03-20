@@ -257,7 +257,7 @@ body {
 	background: linear-gradient(90deg, rgb(16, 201, 195) 65%, rgb(160, 160, 160) 65%);
 }
 .vue-c-gradient {
-	background: linear-gradient(90deg, rgb(16, 201, 195) 25%, rgb(160, 160, 160) 25%);
+	background: linear-gradient(90deg, rgb(16, 201, 195) 45%, rgb(160, 160, 160) 45%);
 }
 .php-gradient {
 	background: linear-gradient(90deg, rgb(16, 201, 195) 40%, rgb(160, 160, 160) 40%);
